@@ -68,7 +68,7 @@ The repository is organized as follows:
   - `sequenceElements.html`
   - `sideMenuSlidIn.html`
   - `staggeredListEntrance.html`
-  - `tweening.html`gsap-animations/
+  - `tweening.html`
 
 Each HTML file contains a unique animation.
 
