@@ -51,28 +51,26 @@ Alternatively, you can open the HTML files directly from your browser:
 
 The repository is organized as follows:
 
-gsap-animations/
-│
-├── 1-basicHover.html
-├── 2-movingBox.html
-├── 3-loadingBar.html
-├── 4-rotatingElement.html
-├── 5-rotationElementwithRainbow.html
-├── aniamtedLandingPage.html
-├── basicControllingTimeline.html
-├── basicTimeline.html
-├── bouncingBall.html
-├── cardShadowRGB.html
-├── fromTo.html
-├── labelsPositioningTweens.html
-├── loopingAnimation.html
-├── sequenceElements.html
-├── sideMenuSlidIn.html
-├── staggeredListEntrance.html
-└── tweening.html
+- **HTML Files**:
+  - `1-basicHover.html`
+  - `2-movingBox.html`
+  - `3-loadingBar.html`
+  - `4-rotatingElement.html`
+  - `5-rotationElementwithRainbow.html`
+  - `aniamtedLandingPage.html`
+  - `basicControllingTimeline.html`
+  - `basicTimeline.html`
+  - `bouncingBall.html`
+  - `cardShadowRGB.html`
+  - `fromTo.html`
+  - `labelsPositioningTweens.html`
+  - `loopingAnimation.html`
+  - `sequenceElements.html`
+  - `sideMenuSlidIn.html`
+  - `staggeredListEntrance.html`
+  - `tweening.html`gsap-animations/
 
-
-- **HTML Files**: Each HTML file contains a unique animation.
+Each HTML file contains a unique animation.
 
 ## Contributing
 
