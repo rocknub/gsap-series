@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+		/>
+	</head>
+	<body class="flex flex-col justify-center items-center w-screen h-screen">
+		<div id="box" class="relative w-24 h-24 m-2 bg-red-500"></div>
+
+		<script>
+			let tl = gsap.timeline({ paused: true });
+
+			tl.addLabel("startSequence")
+				.to(
+					"#box",
+					{
+						x: 100,
+					},
+					"startSequence"
+				)
+				.to(
+					"#box",
+					{
+						y: 50,
+					},
+					"+=0.5"
+				)
+				.addLabel("fade")
+				.to(
+					"#box",
+					{
+						opacity: 0,
+					},
+					"fade+=1"
+				);
+
+			tl.play();
+		</script>
+	</body>
+</html>

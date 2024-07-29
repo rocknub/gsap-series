@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+		/>
+	</head>
+	<body class="flex flex-col bg-gray-100 w-screen h-screen">
+		<div
+			id="banner"
+			class="relative w-full h-full bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 flex items-center justify-center text-white"
+		>
+			<div class="text-center space-y-4">
+				<h1 id="title" class="text-4xl font-bold">Bem-vindo,</h1>
+				<img
+					id="image"
+					src="./imagens/logo_purplewondher.svg"
+					alt="Logo"
+					class="h-24 w-auto mx-auto"
+				/>
+				<p id="description" class="text-lg">Que bom tê-lo aqui hoje.</p>
+			</div>
+		</div>
+
+		<script>
+			let bannerTl = gsap.timeline({ paused: true });
+
+			bannerTl
+				.from("#title", {
+					duration: 1,
+					x: -200,
+					opacity: 0,
+					ease: "power1.out",
+				})
+				.from("#image", {
+					duration: 1,
+					y: -200,
+					opacity: 0,
+					ease: "power1.out",
+				}, "-=0.5")
+				.from("#description", {
+					duration: 1,
+					x: 200,
+					opacity: 0,
+					ease: "power1.out",
+				}, "-=0.5");
+
+			bannerTl.play();
+		</script>
+	</body>
+</html>

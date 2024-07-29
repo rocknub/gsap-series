@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+</head>
+<body class="flex flex-col justify-center items-center w-screen h-screen">
+    <div class="w-full h-full">
+        <ul id="list" type="1" class="flex flex-col justify-center items-center w-screen h-screen">
+            <li id="items" class="opacity-0" style="transform: translateX(-50px);">This is the element number one.</li>
+            <li id="items" class="opacity-0" style="transform: translateX(-50px);">This is the element number two.</li>
+            <li id="items" class="opacity-0" style="transform: translateX(-50px);">This is the element number three.</li>
+        </ul>
+    </div>
+    <script>
+        gsap.to("#items", {
+            duration: 2,
+            opacity: 1,
+            x: 0,
+			stagger: 1
+        });
+    </script>
+</body>
+</html>

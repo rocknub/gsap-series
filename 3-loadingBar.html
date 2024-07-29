@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Loading Bar Animation Example</title>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+		/>
+	</head>
+	<body>
+		<div
+			class="flex flex-col justify-center items-center w-screen h-screen antialiased"
+		>
+			<div
+				id="box"
+				class="relative w-96 h-2 rounded bg-green-500 overflow-hidden"
+			>
+				<div
+					id="loadingBar"
+					class="w-0 h-full rounded bg-red-500"
+				></div>
+			</div>
+		</div>
+		<script>
+			const loadingBar = document.getElementById("loadingBar");
+			const tl = gsap.timeline({ paused: true });
+
+			tl.to(loadingBar, {
+				duration: 5,
+				width: "100%",
+				ease: "power1.inOut",
+			});
+
+			tl.play().then(() => {
+				tl.reverse();
+			});
+		</script>
+	</body>
+</html>

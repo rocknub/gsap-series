@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Moving Box Animation Example</title>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+		/>
+	</head>
+	<body>
+		<div
+			class="flex flex-col justify-center items-center w-screen h-screen antialiased"
+		>
+			<div id="box" class="w-24 h-24 bg-red-500"></div>
+		</div>
+		<script>
+			const box = document.getElementById("box");
+			const tl = gsap.timeline({ paused: true });
+
+			// ----------------- 1st way -----------------
+
+			// tl.to(box, {
+			// 	duration: 1,
+			// 	x: 300,
+			// 	ease: "power1.inOut",
+			// 	yoyo: true,
+			// 	repeat: -1,
+			// });
+
+			// ----------------- 2nd way -----------------
+			tl.to(box, {
+				duration: 1,
+				x: screen.width - 1000,
+				ease: "power1.inOut",
+			})
+				.to(box, {
+					duration: 1,
+					x: -screen.width + 1000,
+					ease: "power1.inOut",
+				})
+				.to(box, {
+					duration: 1,
+					x: 0,
+					ease: "power1.inOut",
+				});
+
+			tl.play().repeat(-1);
+		</script>
+	</body>
+</html>

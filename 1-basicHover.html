@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hover Animation Example</title>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+		/>
+	</head>
+	<body>
+		<div
+			class="flex flex-col justify-center items-center w-screen h-screen antialiased"
+		>
+			<button
+				id="button"
+				class="px-4 py-2 bg-blue-600 rounded-2xl text-white"
+			>
+				Hover me!
+			</button>
+		</div>
+		<script>
+			const button = document.getElementById("button");
+			const tl = gsap.timeline({ paused: true });
+
+			tl.to(button, {
+				duration: 0.3,
+				backgroundColor: "#00FF00",
+				scale: 1.2,
+			});
+
+			button.addEventListener("mouseover", () => {
+				tl.play();
+			});
+
+			button.addEventListener("mouseleave", () => {
+				tl.reverse();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+		/>
+	</head>
+	<body class="flex flex-col justify-center items-center w-screen h-screen">
+		<div id="box" class="relative w-24 h-24 m-2 bg-red-500"></div>
+
+		<ul class="flex flex-row gap-4 mt-24">
+			<li class="border-2 p-2 w-28 text-center">
+				<button id="playBtn">Play</button>
+			</li>
+			<li class="border-2 p-2 w-28 text-center">
+				<button id="pauseBtn">Pause</button>
+			</li>
+			<li class="border-2 p-2 w-28 text-center">
+				<button id="reverseBtn">Reverse</button>
+			</li>
+			<li class="border-2 p-2 w-28 text-center">
+				<button id="seekBtn">Seek 2s</button>
+			</li>
+		</ul>
+
+		<script>
+			let tl = gsap.timeline({ paused: true });
+
+			tl.to("#box", {
+				duration: 2,
+				x: 200,
+				rotation: 360,
+			});
+
+			const playBtn = document.getElementById("playBtn");
+			const pauseBtn = document.getElementById("pauseBtn");
+			const reverseBtn = document.getElementById("reverseBtn");
+			const seekBtn = document.getElementById("seekBtn");
+
+			playBtn.addEventListener("click", () => {
+				tl.play();
+			});
+
+			pauseBtn.addEventListener("click", () => {
+				tl.pause();
+			});
+
+			reverseBtn.addEventListener("click", () => {
+				tl.reverse();
+			});
+
+			seekBtn.addEventListener("click", () => {
+				tl.seek(2);
+			});
+		</script>
+	</body>
+</html>

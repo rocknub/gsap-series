@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+</head>
+<body class="flex flex-col justify-center items-center w-screen h-screen gap-4">
+    <p class="text text-center p-4">
+        The first element doesn't have a delay, the others have a delay of
+        0.3 and 0.6 respectively.
+    </p>
+    <div class="w-24 h-24 bg-red-500" id="shadow"></div>
+    <div class="w-24 h-24 bg-green-500" id="shadow"></div>
+    <div class="w-24 h-24 bg-blue-500" id="shadow"></div>
+    <script>
+        const shadows = gsap.utils.toArray("#shadow");
+        shadows.forEach((shadow, index) => {
+            gsap.timeline({ repeat: -1, yoyo: true }).fromTo(
+                shadow,
+                {
+                    duration: 2,
+                    x: 200,
+                    ease: "power1.inOut",
+                },
+                {
+                    duration: 2,
+                    x: -200,
+                    ease: "power1.inOut",
+                    delay: index * 0.05,
+                }
+            );
+        });
+
+        const text = document.querySelector(".text");
+        const colors = ["rgb(255, 0, 0)", "rgb(0, 255, 0)", "rgb(0, 0, 255)"];
+        
+        function randomGlow() {
+            const randomColor = gsap.utils.random(colors);
+            const randomBlur = gsap.utils.random(0, 15);
+            return `0 0 ${randomBlur}px ${randomColor}`;
+        }
+
+        gsap.timeline({ repeat: -1, yoyo: true }).to(text, {
+            duration: 1,
+            textShadow: randomGlow,
+            ease: "power1.inOut",
+            repeatDelay: 0.3,
+            onRepeat: function() {
+                gsap.set(text, { textShadow: randomGlow() });
+            }
+        });
+    </script>
+</body>
+</html>

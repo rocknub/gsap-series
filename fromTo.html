@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+		/>
+	</head>
+	<body class="flex flex-col justify-center items-center w-screen h-screen">
+		<div id="box" class="relative w-24 h-24 bg-green-500"></div>
+		<script>
+			gsap.fromTo(
+				"#box",
+				{
+					x: 0,
+					opacity: 0,
+				},
+				{
+					duration: 2,
+					x: 200,
+					opacity: 1,
+				}
+			)
+				.repeat(-1)
+				.yoyo(true);
+		</script>
+	</body>
+</html>
