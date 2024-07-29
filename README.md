@@ -80,6 +80,7 @@ Contributions are welcome! If you have any ideas for new animations or improveme
 
 - Follow the existing code style.
 - Test your changes thoroughly.
+- Check for performance problems.
 - Provide clear and concise commit messages.
 
 ## License
