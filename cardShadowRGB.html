@@ -1,54 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-  />
-  <style>
-    .shadow {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: inherit;
-      pointer-events: none;
-      opacity: 0.25;
-      mix-blend-mode: multiply;
-    }
-  </style>
-</head>
-<body class="flex flex-col justify-center items-center w-screen h-screen">
-	<div class="w-60 h-96 bg-black relative rounded-md">
-	  <div class="shadow" id="shadow1"></div>
-	  <div class="shadow" id="shadow2"></div>
-	  <div class="shadow" id="shadow3"></div>
-	</div>
-	<script>
-	  gsap.set(".shadow", { scale: 0 });
-  
-	  const shadows = gsap.utils.toArray(".shadow");
-  
-	  shadows.forEach((shadow, index) => {
-		gsap.timeline({ repeat: -1, yoyo: true })
-		  .to(
-			shadow,
-			{
-			  duration: 0.3,
-			  scale: 1.2,
-			  x: gsap.utils.random(-20, 20),
-			  y: gsap.utils.random(-20, 20),
-			  backgroundColor: gsap.utils.random(
-				["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#00FFFF", "#FF00FF"]
-			  ),
-			  ease: "power2.inOut",
-			},
-			index * 1
-		  );
-	  });
-	</script>
-  </body>
-  </html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Card Shadow RGB</title>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+		/>
+		<style>
+			.shadow-anim {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: inherit;
+				pointer-events: none;
+				mix-blend-mode: screen;
+			}
+		</style>
+	</head>
+	<body class="flex flex-col justify-center items-center w-screen h-screen">
+		<div class="relative w-60 h-96 bg-black rounded-3xl">
+			<div
+				class="w-full h-full rounded-3xl shadow-anim"
+				id="shadow"
+			></div>
+		</div>
+
+		<script>
+			const shadow = document.getElementById("shadow");
+
+			const tl = gsap.timeline({ repeat: -1, yoyo: true });
+			tl.to(shadow, {
+				duration: 1,
+				boxShadow: "0 0 40px rgba(255, 0, 0, 1)",
+				ease: "linear",
+			})
+				.to(shadow, {
+					duration: 1,
+					boxShadow: "0 0 40px rgba(0, 0, 255, 1)",
+					ease: "linear",
+				})
+				.to(shadow, {
+					duration: 1,
+					boxShadow: "0 0 40px rgba(0, 255, 0, 1)",
+					ease: "linear",
+				})
+				.to(shadow, {
+					duration: 1,
+					boxShadow: "0 0 40px rgba(255, 255, 0, 1)",
+					ease: "linear",
+				})
+				.to(shadow, {
+					duration: 1,
+					boxShadow: "0 0 40px rgba(0, 255, 255, 1)",
+					ease: "linear",
+				})
+				.to(shadow, {
+					duration: 1,
+					boxShadow: "0 0 40px rgba(255, 0, 255, 1)",
+					ease: "linear",
+				});
+
+			gsap.to(".relative", {
+				duration: 1.5,
+				scale: 1.025,
+				y: -10,
+				repeat: -1,
+				yoyo: true,
+				ease: "power1.inOut",
+			});
+		</script>
+	</body>
+</html>
