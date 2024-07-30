@@ -52,23 +52,23 @@ Alternatively, you can open the HTML files directly from your browser:
 The repository is organized as follows:
 
 - **HTML Files**:
-  - `1-basicHover.html`
-  - `2-movingBox.html`
-  - `3-loadingBar.html`
-  - `4-rotatingElement.html`
-  - `5-rotationElementwithRainbow.html`
-  - `aniamtedLandingPage.html`
-  - `basicControllingTimeline.html`
-  - `basicTimeline.html`
-  - `bouncingBall.html`
-  - `cardShadowRGB.html`
-  - `fromTo.html`
-  - `labelsPositioningTweens.html`
-  - `loopingAnimation.html`
-  - `sequenceElements.html`
-  - `sideMenuSlidIn.html`
-  - `staggeredListEntrance.html`
-  - `tweening.html`
+  - [1-basicHover.html](1-basicHover.html)
+  - [2-movingBox.html](2-movingBox.html)
+  - [3-loadingBar.html](3-loadingBar.html)
+  - [4-rotatingElement.html](4-rotatingElement.html)
+  - [5-rotationElementwithRainbow.html](5-rotationElementwithRainbow.html)
+  - [aniamtedLandingPage.html](aniamtedLandingPage.html)
+  - [basicControllingTimeline.html](basicControllingTimeline.html)
+  - [basicTimeline.html](basicTimeline.html)
+  - [bouncingBall.html](bouncingBall.html)
+  - [cardShadowRGB.html](cardShadowRGB.html)
+  - [fromTo.html](fromTo.html)
+  - [labelsPositioningTweens.html](labelsPositioningTweens.html)
+  - [loopingAnimation.html](loopingAnimation.html)
+  - [sequenceElements.html](sequenceElements.html)
+  - [sideMenuSlidIn.html](sideMenuSlidIn.html)
+  - [staggeredListEntrance.html](staggeredListEntrance.html)
+  - [tweening.html](tweening.html)
 
 Each HTML file contains a unique animation.
 
